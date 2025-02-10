@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Github\\PTPMQL_Repo\\PTPMQL\\Demo_MVC\\Demo_MVC.csproj": {}
+    "E:\\Github\\PTPMQL_Repo\\ptpmql\\demo_mvc\\Demo_MVC.csproj": {}
   },
   "projects": {
-    "E:\\Github\\PTPMQL_Repo\\PTPMQL\\Demo_MVC\\Demo_MVC.csproj": {
+    "E:\\Github\\PTPMQL_Repo\\ptpmql\\demo_mvc\\Demo_MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Github\\PTPMQL_Repo\\PTPMQL\\Demo_MVC\\Demo_MVC.csproj",
+        "projectUniqueName": "E:\\Github\\PTPMQL_Repo\\ptpmql\\demo_mvc\\Demo_MVC.csproj",
         "projectName": "Demo_MVC",
-        "projectPath": "E:\\Github\\PTPMQL_Repo\\PTPMQL\\Demo_MVC\\Demo_MVC.csproj",
+        "projectPath": "E:\\Github\\PTPMQL_Repo\\ptpmql\\demo_mvc\\Demo_MVC.csproj",
         "packagesPath": "C:\\Users\\haov8\\.nuget\\packages\\",
-        "outputPath": "E:\\Github\\PTPMQL_Repo\\PTPMQL\\Demo_MVC\\obj\\",
+        "outputPath": "E:\\Github\\PTPMQL_Repo\\ptpmql\\demo_mvc\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\haov8\\AppData\\Roaming\\NuGet\\NuGet.Config"
