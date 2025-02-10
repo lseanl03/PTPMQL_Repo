@@ -1,13 +1,29 @@
-using System.Diagnostics;
+using DemoMVC.Models;
 using Microsoft.AspNetCore.Mvc;
-using Demo_MVC.Models;
 
-namespace Demo_MVC.Controllers
+namespace DemoMVC.Controllers
 {
     public class StudentController : Controller
     {
+        //khai bao cac action tuong ung
+        //Action tra ve du lieu toan bo ban ghi trong bang Student
         public IActionResult Index()
         {
+            //Khai bao 1 doi tuong Student va gan gia tri
+            Student std = new Student();
+            std.Id = "1";
+            std.FullName = "Nguyen Van A";
+            return View(std);
+        }
+        public IActionResult Create()
+        {
+            return View();
+        }
+        //action de nhan du lieu tu form gui len va hien thi ra
+        [HttpPost]
+        public IActionResult Create(Student std)
+        {
+            ViewBag.Message = "ID:" + std.Id + " FullName:" + std.FullName;
             return View();
         }
     }
