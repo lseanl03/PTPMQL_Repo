@@ -1,0 +1,14 @@
+
+<form asp-action="BMIResult">
+    <label>
+        <input type="radio" name="Gender" value="Nam"> Nam
+    </label>
+    <label>
+        <input type="radio" name="Gender" value="Nữ"> Nữ
+    </label>
+    <input type="text" name="Height" placeholder="Nhập chiều cao">
+    <input type="text" name="Weight" placeholder="Nhập cân nặng">
+    <input type="submit" value="BMIResult">
+    
+</form>
+<h2>@ViewBag.Message</h2>
