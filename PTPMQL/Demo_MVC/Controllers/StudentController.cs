@@ -53,5 +53,46 @@ namespace DemoMVC.Controllers
             ViewBag.Message = "Giới tính: " + bMI.Gender + " Kết quả BMI: " + bMI.Result + " Đánh giá: " + result;   
             return View();
         }
+        
+        [HttpGet]
+        public IActionResult SubjectResult()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult SubjectResult(Subject subject)
+        {
+            if (subject.a == 0 || subject.b == 0 || subject.c == 0)
+            {
+                ViewBag.Message = "Vui lòng nhập đầy đủ thông tin";
+                return View();
+            }
+            float a = subject.a * 0.6f;
+            float b = subject.b * 0.3f;
+            float c = subject.c * 0.1f;
+            ViewBag.Message = "Tổng điểm môn học là: " + (a + b + c);
+            return View();
+        }
+        
+
+                [HttpGet]
+        public IActionResult BillResult()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult BillResult(Bill bill)
+        {
+            if (bill.amount == 0 || bill.price == 0)
+            {
+                ViewBag.Message = "Vui lòng nhập đầy đủ thông tin";
+                return View();
+            }
+
+            ViewBag.Message = "Tổng tiền đơn hàng là: " + (bill.amount * bill.price);
+            return View();
+        }
     }
 }
