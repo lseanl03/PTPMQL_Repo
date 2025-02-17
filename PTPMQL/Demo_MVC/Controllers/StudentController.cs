@@ -74,25 +74,5 @@ namespace DemoMVC.Controllers
             ViewBag.Message = "Tổng điểm môn học là: " + (a + b + c);
             return View();
         }
-        
-
-                [HttpGet]
-        public IActionResult BillResult()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult BillResult(Bill bill)
-        {
-            if (bill.amount == 0 || bill.price == 0)
-            {
-                ViewBag.Message = "Vui lòng nhập đầy đủ thông tin";
-                return View();
-            }
-
-            ViewBag.Message = "Tổng tiền đơn hàng là: " + (bill.amount * bill.price);
-            return View();
-        }
     }
 }
