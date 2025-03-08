@@ -1,1 +1,26 @@
-<h1>demo student controller</h1>
+@model IEnumerable<Demo_MVC.Models.Student>
+<a asp-action="Create" class="w3-btn w3-success w3-border">Create</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>FullName</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Id</td>
+                <td>@student.FullName</td>
+                <td>@student.Email</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@student.Id">Edit</a> |
+                    <a asp-action="Delete" asp-route-id="@student.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

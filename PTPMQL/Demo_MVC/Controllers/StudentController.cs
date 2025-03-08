@@ -1,19 +1,23 @@
 using Demo_MVC.Models;
-using DemoMVC.Models;
+using DemoMVC.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace DemoMVC.Controllers
 {
     public class StudentController : Controller
     {
-        public IActionResult Index()
+        //khai bao dbcontext
+        private readonly ApplicationDbContext _context;
+        public StudentController(ApplicationDbContext context)
         {
-            Student std = new Student();
-            std.Id = "1";
-            std.FullName = "Nguyen Van A";
-            return View(std);
+            _context = context;
         }
-
+        public async Task<IActionResult> Index()
+        {
+            var students = await _context.student.ToListAsync();
+            return View(students);
+        }
         [HttpGet]
         public IActionResult Create()
         {
@@ -21,58 +25,84 @@ namespace DemoMVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Student std)
+        public async Task<IActionResult> Create([Bind("Id, FullName, Email")] Student student)
         {
-            ViewBag.Message = "ID:" + std.Id + " FullName:" + std.FullName;
-            return View();
+            await _context.student.AddAsync(student);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
         }
-        
-        [HttpGet]
+        public async Task<IActionResult> Edit(int id)
+        {
+            if (id == 0 || _context.student == null) return NotFound();
+
+            var student = await _context.student.FindAsync(id);
+
+            if (student == null) return NotFound();
+
+            return View(student);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, [Bind("Id, FullName, Email")] Student student)
+        {
+            if (id == 0 || !ModelState.IsValid) return NotFound();
+
+            _context.Update(student);
+            
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Delete(int id)
+        {
+            if (id == 0 || _context.student == null) return NotFound();
+
+            var student = await _context.student.FindAsync(id);
+
+            if (student == null) return NotFound();
+
+            return View(student);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            if (_context.student == null) return Problem("Null students");
+
+            var student = await _context.student.FindAsync(id);
+
+            if (student != null) _context.student.Remove(student);
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+        }
+
+        private bool PersonExists(int id)
+        {
+            return (_context.student?.Any(p => p.Id == id)).GetValueOrDefault();
+        }    
         public IActionResult BMIResult()
         {
             return View();
         }
 
-        public IActionResult BMIResult(BMI bMI)
-        {
-            if(bMI.Weight == 0 || bMI.Height == 0 || bMI.Gender == null)
-            {
-                ViewBag.Message = "Vui lòng nhập đầy đủ thông tin";
-                return View();
-            }
-            string result = "";
-            double mHeight = bMI.Height / 100; 
-            bMI.Result = (int)(bMI.Weight / (mHeight * mHeight));
-            if(bMI.Result < 18.5) result = "Bạn đang gầy";
-            else if(bMI.Result < 24.9) result = "Bạn đang bình thường";
-            else if(bMI.Result < 29.9) result = "Bạn đang thừa cân";
-            else if(bMI.Result < 34.9) result = "Bạn đang béo phì cấp độ 1";
-            else if(bMI.Result < 39.9) result = "Bạn đang béo phì cấp độ 2";
-            else ViewBag.Message = "Bạn đang béo phì cấp độ 3";
-
-            ViewBag.Message = "Giới tính: " + bMI.Gender + " Kết quả BMI: " + bMI.Result + " Đánh giá: " + result;   
-            return View();
-        }
-        
-        [HttpGet]
-        public IActionResult SubjectResult()
-        {
-            return View();
-        }
-
         [HttpPost]
-        public IActionResult SubjectResult(Subject subject)
+        public IActionResult BMIResult(Student student)
         {
-            if (subject.a == 0 || subject.b == 0 || subject.c == 0)
-            {
-                ViewBag.Message = "Vui lòng nhập đầy đủ thông tin";
-                return View();
-            }
-            float a = subject.a * 0.6f;
-            float b = subject.b * 0.3f;
-            float c = subject.c * 0.1f;
-            ViewBag.Message = "Tổng điểm môn học là: " + (a + b + c);
+            double? height = student.Height / 100;
+            double? weight = student.Weight;
+            double? bmi = weight / (height * height);
+            string bmiStr = "";
+
+            if (bmi < 18.5) bmiStr = "gầy";
+            else if (bmi < 24.9) bmiStr = "bình thường";
+            else if (bmi < 29.9) bmiStr = "hơi béo";
+            else if (bmi >= 30) bmiStr = "quá béo";
+
+            ViewBag.Message = $"BMI là:  {bmiStr} ({bmi:0.0})";
             return View();
-        }
+        }  
     }
 }
