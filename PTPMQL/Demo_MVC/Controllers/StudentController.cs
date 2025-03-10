@@ -2,6 +2,7 @@ using Demo_MVC.Models;
 using DemoMVC.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Demo_MVC.Models.Process;
 
 namespace DemoMVC.Controllers
 {
@@ -9,6 +10,7 @@ namespace DemoMVC.Controllers
     {
         //khai bao dbcontext
         private readonly ApplicationDbContext _context;
+        private ExcelProcess _excelProcess = new ExcelProcess();
         public StudentController(ApplicationDbContext context)
         {
             _context = context;
@@ -104,5 +106,45 @@ namespace DemoMVC.Controllers
             ViewBag.Message = $"BMI là:  {bmiStr} ({bmi:0.0})";
             return View();
         }  
+
+        public async Task<IActionResult> Upload()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Upload(IFormFile file)
+        {
+            if(file != null){
+                string fileExtension = Path.GetExtension(file.FileName);
+                if (fileExtension != ".xls" && fileExtension != ".xlsx")
+                {
+                    ModelState.AddModelError("", "Please choose an Excel file to upload!");
+                }
+                else{
+                    var fileName = DateTime.Now.ToShortTimeString() + fileExtension;
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Uploads/Excels", fileName);
+                    var fileLocation = new FileInfo(filePath).ToString();
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await file.CopyToAsync(stream);
+                        var dt = _excelProcess.ReadExcelToDataTable(fileLocation);
+                        for(int i = 0; i < dt.Rows.Count; i++){
+                            var student = new Student
+                            {
+                                Id = int.Parse(dt.Rows[i][0].ToString()),
+                                FullName = dt.Rows[i][1].ToString(),
+                                Email = dt.Rows[i][2].ToString(),
+                            };
+                            _context.Add(student);
+                        }
+                        await _context.SaveChangesAsync();
+                        return RedirectToAction(nameof(Index));
+                    }
+                }
+            }
+            return View();
+        }
     }
 }

@@ -32,8 +32,48 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbFxCaWxsUmVzdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/Github/PTPMQL_Repo/PTPMQL/Demo_MVC/Views/Daily/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Github/PTPMQL_Repo/PTPMQL/Demo_MVC/Views/Daily/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Github/PTPMQL_Repo/PTPMQL/Demo_MVC/Views/Daily/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Github/PTPMQL_Repo/PTPMQL/Demo_MVC/Views/Daily/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Github/PTPMQL_Repo/PTPMQL/Demo_MVC/Views/Daily/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGFpbHlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/Github/PTPMQL_Repo/PTPMQL/Demo_MVC/Views/Employee/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Github/PTPMQL_Repo/PTPMQL/Demo_MVC/Views/HeThongPhanPhoi/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVUaG9uZ1BoYW5QaG9pXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Github/PTPMQL_Repo/PTPMQL/Demo_MVC/Views/HeThongPhanPhoi/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVUaG9uZ1BoYW5QaG9pXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Github/PTPMQL_Repo/PTPMQL/Demo_MVC/Views/HeThongPhanPhoi/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVUaG9uZ1BoYW5QaG9pXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Github/PTPMQL_Repo/PTPMQL/Demo_MVC/Views/HeThongPhanPhoi/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVUaG9uZ1BoYW5QaG9pXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Github/PTPMQL_Repo/PTPMQL/Demo_MVC/Views/HeThongPhanPhoi/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSGVUaG9uZ1BoYW5QaG9pXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Github/PTPMQL_Repo/PTPMQL/Demo_MVC/Views/Home/Index.cshtml]
@@ -78,6 +118,30 @@ build_metadata.AdditionalFiles.CssScope =
 
 [E:/Github/PTPMQL_Repo/PTPMQL/Demo_MVC/Views/Student/SubjectResult.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxTdWJqZWN0UmVzdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Github/PTPMQL_Repo/PTPMQL/Demo_MVC/Views/Student/Upload.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU3R1ZGVudFxVcGxvYWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Github/PTPMQL_Repo/PTPMQL/Demo_MVC/Views/Test/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Github/PTPMQL_Repo/PTPMQL/Demo_MVC/Views/Test/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Github/PTPMQL_Repo/PTPMQL/Demo_MVC/Views/Test/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Github/PTPMQL_Repo/PTPMQL/Demo_MVC/Views/Test/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/Github/PTPMQL_Repo/PTPMQL/Demo_MVC/Views/Test/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGVzdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [E:/Github/PTPMQL_Repo/PTPMQL/Demo_MVC/Views/_ViewImports.cshtml]

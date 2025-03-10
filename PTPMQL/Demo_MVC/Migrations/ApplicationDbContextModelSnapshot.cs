@@ -39,6 +39,20 @@ namespace Demo_MVC.Migrations
 
                     b.ToTable("Students");
                 });
+
+            modelBuilder.Entity("Demo_MVC.Models.Test", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Test");
+                });
 #pragma warning restore 612, 618
         }
     }
