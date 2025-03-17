@@ -9,8 +9,7 @@ public class Student
     [Key]
     public required int Id { get; set; }
     public required string FullName { get; set; }
-    [EmailAddress]
-    public string? Email { get; set; }
+    public string? Address { get; set; }
 
     public double Height { get; set; }
     public double Weight { get; set; }

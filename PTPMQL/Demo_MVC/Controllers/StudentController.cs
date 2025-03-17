@@ -122,9 +122,10 @@ namespace DemoMVC.Controllers
                 {
                     ModelState.AddModelError("", "Please choose an Excel file to upload!");
                 }
-                else{
+                else
+                {
                     var fileName = DateTime.Now.ToShortTimeString() + fileExtension;
-                    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Uploads/Excels", fileName);
+                    var filePath = Path.Combine(Directory.GetCurrentDirectory() + "/Uploads/Excels", fileName);
                     var fileLocation = new FileInfo(filePath).ToString();
                     using (var stream = new FileStream(filePath, FileMode.Create))
                     {
@@ -135,7 +136,7 @@ namespace DemoMVC.Controllers
                             {
                                 Id = int.Parse(dt.Rows[i][0].ToString()),
                                 FullName = dt.Rows[i][1].ToString(),
-                                Email = dt.Rows[i][2].ToString(),
+                                Address = dt.Rows[i][2].ToString(),
                             };
                             _context.Add(student);
                         }
