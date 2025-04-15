@@ -27,7 +27,7 @@ namespace DemoMVC.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("Id, FullName, Email")] Student student)
+        public async Task<IActionResult> Create([Bind("Id, FullName, Address")] Student student)
         {
             await _context.student.AddAsync(student);
             await _context.SaveChangesAsync();
@@ -45,7 +45,7 @@ namespace DemoMVC.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("Id, FullName, Email")] Student student)
+        public async Task<IActionResult> Edit(int id, [Bind("Id, FullName, Address")] Student student)
         {
             if (id == 0 || !ModelState.IsValid) return NotFound();
 
