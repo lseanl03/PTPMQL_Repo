@@ -71,13 +71,13 @@ namespace Demo_MVC.Areas.Identity.Pages.Account
         /// </summary>
         public class InputModel
         {
+            [Required]
+            [Display(Name = "Full Name")]
+            public string FullName { get; set; }    
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
             ///     directly from your code. This API may change or be removed in future releases.
             /// </summary>
-            
-            [Display(Name = "Full name")]
-            public string FullName { get; set; }
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
@@ -118,6 +118,7 @@ namespace Demo_MVC.Areas.Identity.Pages.Account
             {
                 var user = CreateUser();
                 user.FullName = Input.FullName;
+
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 var result = await _userManager.CreateAsync(user, Input.Password);
@@ -140,10 +141,12 @@ namespace Demo_MVC.Areas.Identity.Pages.Account
 
                     if (_userManager.Options.SignIn.RequireConfirmedAccount)
                     {
+                        System.Diagnostics.Debug.WriteLine($"result.Succeeded = {result.Succeeded}");
                         return RedirectToPage("RegisterConfirmation", new { email = Input.Email, returnUrl = returnUrl });
                     }
                     else
                     {
+                        System.Diagnostics.Debug.WriteLine($"a");
                         await _signInManager.SignInAsync(user, isPersistent: false);
                         return LocalRedirect(returnUrl);
                     }

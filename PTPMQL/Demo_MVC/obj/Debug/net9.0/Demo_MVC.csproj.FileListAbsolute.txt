@@ -442,3 +442,6 @@ E:\Github\PTPMQL_Repo\PTPMQL\demo_mvc\obj\Debug\net9.0\compressed\a3ygkwa5zy-2z0
 E:\Github\PTPMQL_Repo\PTPMQL\demo_mvc\obj\Debug\net9.0\compressed\nezrqnk58p-muycvpuwrr.gz
 E:\Github\PTPMQL_Repo\PTPMQL\demo_mvc\obj\Debug\net9.0\compressed\v0zgfp0y55-87fc7y1x7t.gz
 E:\Github\PTPMQL_Repo\PTPMQL\demo_mvc\obj\Debug\net9.0\compressed\yfc7ypekbg-mlv21k5csn.gz
+E:\Github\PTPMQL_Repo\ptpmql\demo_mvc\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
+E:\Github\PTPMQL_Repo\ptpmql\demo_mvc\bin\Debug\net9.0\MailKit.dll
+E:\Github\PTPMQL_Repo\ptpmql\demo_mvc\bin\Debug\net9.0\MimeKit.dll
