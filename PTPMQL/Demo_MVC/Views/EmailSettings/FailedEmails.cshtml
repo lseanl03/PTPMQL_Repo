@@ -1,0 +1,49 @@
+@{
+    ViewData["Title"] = "Email chưa gửi";
+}
+
+<h2>Email chưa gửi</h2>
+
+<div class="mb-3">
+    <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+    @if (Model.Any())
+    {
+        <a asp-action="DeleteAll" class="btn btn-danger" 
+           onclick="return confirm('Bạn có chắc chắn muốn xóa tất cả email chưa gửi?');">
+            Xóa tất cả
+        </a>
+    }
+</div>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-info">
+        Không có email nào chưa được gửi.
+    </div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Tên file</th>
+                    <th>Thời gian tạo</th>
+                    <th>Thao tác</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.FileName</td>
+                        <td>@item.CreatedDate.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                        <td>
+                            <a asp-action="ViewEmail" asp-route-id="@item.FileName" class="btn btn-info btn-sm">Xem</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

@@ -1,0 +1,59 @@
+
+@{
+    ViewData["Title"] = "Cài đặt Email";
+}
+
+<h2>Cài đặt Email</h2>
+
+<div class="card mb-4">
+    <div class="card-header">
+        <h4>Thông tin SMTP</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Email:</dt>
+            <dd class="col-sm-9">@Model.Mail</dd>
+            
+            <dt class="col-sm-3">Tên hiển thị:</dt>
+            <dd class="col-sm-9">@Model.DisplayName</dd>
+            
+            <dt class="col-sm-3">SMTP Host:</dt>
+            <dd class="col-sm-9">@Model.Host</dd>
+            
+            <dt class="col-sm-3">SMTP Port:</dt>
+            <dd class="col-sm-9">@Model.Port</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="alert alert-info">
+    <p>
+        <strong>Lưu ý:</strong> Cài đặt email được cấu hình trong file <code>appsettings.json</code>. 
+        Để thay đổi cài đặt, vui lòng cập nhật file cấu hình và khởi động lại ứng dụng.
+    </p>
+</div>
+
+@if (ViewBag.UnsentEmailCount > 0)
+{
+    <div class="alert alert-warning">
+        <p>
+            Có @ViewBag.UnsentEmailCount email chưa được gửi do lỗi.
+            <a asp-action="FailedEmails" class="btn btn-warning btn-sm">Xem danh sách</a>
+        </p>
+    </div>
+}
+
+<h3 class="mt-4">Hướng dẫn cấu hình Gmail</h3>
+
+<div class="card">
+    <div class="card-body">
+        <ol>
+            <li>Đăng nhập vào tài khoản Google của bạn</li>
+            <li>Truy cập <a href="https://myaccount.google.com/security" target="_blank">Bảo mật Google Account</a></li>
+            <li>Bật xác minh 2 bước nếu chưa bật</li>
+            <li>Sau khi bật xác minh 2 bước, truy cập <a href="https://myaccount.google.com/apppasswords" target="_blank">Mật khẩu ứng dụng</a></li>
+            <li>Tạo mật khẩu ứng dụng mới cho ứng dụng này</li>
+            <li>Sử dụng mật khẩu được tạo để cập nhật cài đặt trong appsettings.json</li>
+        </ol>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "Reset Employee List";
+}
+
+<h2>Reset Employee List</h2>
+
+<div class="alert alert-warning">
+    <h4>Warning!</h4>
+    <p>This action will delete all current employees and create 10 new sample employees. This cannot be undone.</p>
+</div>
+
+<form asp-action="ResetEmployees" method="post">
+    <input type="hidden" name="confirm" value="true" />
+    <button type="submit" class="btn btn-danger">Confirm Reset</button>
+    <a asp-controller="Employee1" asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

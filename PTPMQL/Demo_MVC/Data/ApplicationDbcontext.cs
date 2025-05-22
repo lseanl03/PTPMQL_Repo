@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Demo_MVC.Models;
+using VicemMVIdentity.Models.Entities;
+using DemoMVC.Models.Entities;
 namespace DemoMVC.Data
 {
     using Microsoft.EntityFrameworkCore;
@@ -34,5 +36,9 @@ namespace DemoMVC.Data
             builder.Entity<IdentityRoleClaim<string>>().ToTable("RoleClaims");
             builder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims");
         }
+
+public DbSet<VicemMVIdentity.Models.Entities.MemberUnit> MemberUnit { get; set; } = default!;
+
+public DbSet<DemoMVC.Models.Entities.Employee1> Employee1 { get; set; } = default!;
     }
 }

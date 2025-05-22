@@ -1,0 +1,16 @@
+@using Demo_MVC.Models.ViewModels
+@model AssignRoleVM
+<h2>Assign Role</h2>
+<hr>
+<form asp-action="AssignRole" method="post">
+    @foreach (var role in Model.Roles)
+    {
+        <div>
+            <input class="checkbox" type="checkbox" id="@role.RoleId" name="selectedRoles" value="@role.RoleName"
+                   @(role.IsSelected ? "checked" : "") />
+            <label for="@role.RoleId">@role.RoleName</label>
+        </div>
+    }
+    <input type="hidden" name="UserId" value="@Model.UserId" />
+    <button type="submit" class="btn btn-primary">Assign Roles</button>
+</form>

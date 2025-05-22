@@ -445,3 +445,4 @@ E:\Github\PTPMQL_Repo\PTPMQL\demo_mvc\obj\Debug\net9.0\compressed\yfc7ypekbg-mlv
 E:\Github\PTPMQL_Repo\ptpmql\demo_mvc\bin\Debug\net9.0\BouncyCastle.Cryptography.dll
 E:\Github\PTPMQL_Repo\ptpmql\demo_mvc\bin\Debug\net9.0\MailKit.dll
 E:\Github\PTPMQL_Repo\ptpmql\demo_mvc\bin\Debug\net9.0\MimeKit.dll
+E:\Github\PTPMQL_Repo\ptpmql\demo_mvc\bin\Debug\net9.0\Bogus.dll

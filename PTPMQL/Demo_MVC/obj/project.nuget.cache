@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "WOD4ElHL+lQ=",
+  "dgSpecHash": "YmB/VJ7n04A=",
   "success": true,
-  "projectFilePath": "E:\\Github\\PTPMQL_Repo\\PTPMQL\\Demo_MVC\\Demo_MVC.csproj",
+  "projectFilePath": "E:\\Github\\PTPMQL_Repo\\ptpmql\\demo_mvc\\Demo_MVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\haov8\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\haov8\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+    "C:\\Users\\haov8\\.nuget\\packages\\bogus\\35.6.3\\bogus.35.6.3.nupkg.sha512",
     "C:\\Users\\haov8\\.nuget\\packages\\bouncycastle.cryptography\\2.5.1\\bouncycastle.cryptography.2.5.1.nupkg.sha512",
     "C:\\Users\\haov8\\.nuget\\packages\\epplus\\7.6.1\\epplus.7.6.1.nupkg.sha512",
     "C:\\Users\\haov8\\.nuget\\packages\\epplus.interfaces\\7.6.1\\epplus.interfaces.7.6.1.nupkg.sha512",
